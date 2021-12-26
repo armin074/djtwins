@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+*{
+ box-sizing: border-box;
+}
+html,
+body {
+  background-color: #333333;
+  margin: 0;
+  padding: 0;
+  color: white;
+
+  
+  font-family: "Monument Extended", sans-serif;
+
+}
+@font-face {
+  font-family: 'Monument Extended';
+  src: url(fonts/MonumentExtended-Regular.otf);
+
+}
+@font-face {
+  font-family: 'Monument Extended';
+  src: url(fonts/MonumentExtended-Ultrabold.otf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'League Spartan';
+  src: url(fonts/league-spartan/LeagueSpartan-Bold.otf);
+  font-weight: bold;
+}
+
+
+/* nav  */
+
+nav {
+  width: 80%;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+}
+.info-text {
+ 
+  font-size:10px;
+  position: absolute;
+}
+.menu-item {
+  flex: 1;
+}
+
+.menu-left {
+  text-align: left;
+}
+
+.menu-center {
+  text-align: center;
+}
+
+.menu-right {
+  text-align: right;
+}
+
+.menu-link {
+  padding: 0 30px;
+}
+
+/* hero img  */
+
+.wrapper-img {
+  object-fit: cover;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: invert(35%);
+  height: 800px;
+  width: 700px;
+ padding:100px 35px;
+
+ z-index: 0;
+}
+
+
+@media screen and (max-width: 512px) {
+  .wrapper-img {
+    margin: 0;
+    object-fit: contain;
+    top: 25rem;
+    padding: 50px;
+    height: 100%;
+    width: 820px;
+    position: absolute;
+    object-fit: cover;
+    transform: translate();
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 401px) {
+  .wrapper-img {
+    margin: 0;
+    object-fit: cover;
+    top: 25rem;
+    padding: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: absolute;
+    object-fit: cover;
+    transform: translate();
+
+  }
+}
+
+.box {
+  background: white;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+
+}
+
+/* header  */
+
+.header {
+  font-family: 'Monument Extended';
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  height: 100vh;
+  pointer-events: none;
+  font-weight: bold;
+
+}
+.header-1 {
+  color: red;
+  padding-bottom: 50px;
+}
+
+
+.header h1 {
+  transform: rotate(-180deg);
+  font-size: 75px;
+  margin: 0;
+  padding-top: 350px;
+
+}
+@media screen and (max-width: 512px){ 
+.header h1 {
+ 
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -200px;
+   top: -100px;
+  
+
+}
+}
+.header-1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.header-2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+/* hero-container */
+
+.sidebar-text {
+ 
+  position: absolute;
+  top: 20%;
+  right: 7%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(165, 165, 165);
+}
+
+.projects {
+
+  position: absolute;
+  bottom: 10%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  
+}
+
+.img-nav {
+  position: absolute;
+  right: 13%;
+  bottom: 13%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: grey;
+}
+
+.next {
+  position: relative;
+  top: 40px;
+  left: 80px;
+}
+
+/* loader  */
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #333;
+  z-index: 7;
+  
+}
+.prev{
+
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+  letter-spacing: .2rem;
+  color: #fff;
+  height: 20px;
+  width:175px;
+  font-size: 9px;
+  text-transform: lowercase;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 512px) {
+  .prev {
+   right: -45px;
+    
+  }
+}
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8%;
+  height: 20vh;
+  background: #F72F2F;;
+  z-index: 2;
+}
+
+
+/* media queries  */
+
+@media (max-width: 900px) {
+ 
+  .header {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 40px;
+  
+  }
+}
+ 
+
+.first {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #333;
+  font-size: 16px;
+}
+
+.loader-text {
+  z-index: 5; 
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px){
+  .loader-text {transform: translate(-200%,-25%);}
+}
+
+.rotate-text {
+  position:absolute;
+  width: 150px;
+  height: 150px;
+  right: 125px;
+  top: 100px;
+  border-radius: 100%;
+  -webkit-animation:spin 10s linear infinite;
+    -moz-animation:spin 10s linear infinite;
+    animation:spin 10s linear infinite;
+}
+
+@media screen and (min-width:1024px) {
+  .rotate-text {
+    right: 150px;
+    
+  }
+}
+@media screen and (max-width: 512px) {
+  .rotate-text {
+   left: 2rem;
+   width: 125px;
+   height: 125px;
+   top: 75vh;
+  
+  }
+}
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+  }
+
+  .container-main {
+    display:flex ;
+  }
+
+
+  .scroll-class {
+    opacity: 1;
+  }
+.cursor {
+  position: absolute;
+  background-color: white;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+  0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.cursor::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: url("http://mirkozeppieri.emanuelepapale.com/wp-content/uploads/2018/07/project-hover-cursor.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.cursor.active {
+  opacity: 1;
+  transform: scale(12)
+}
+.cursor.active::before {
+  opacity: 1;
+}
+.cursor-follower {
+  position: absolute;
+  background: #F72F2F;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+  0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: translate(4px,4px)
+}
+.cursor-follower.active {
+  opacity: 0.3;
+  transform: scale(0);
+}
+.portfolio-thumb {
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.portfolio-thumb img {
+  max-width: 360px;
+  opacity: 0.4;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+  transform-origin: 90% center;
+}
+
+.portfolio-item:hover .portfolio-thumb {
+  transform: translateX(-1.75rem);
+}
+
+.portfolio-item:hover .portfolio-thumb img {
+  opacity: 0.8;
+  transform: scale(1.2);
+}

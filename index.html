@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>DJ Twins Official | Vuk & Danilo Tatic</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</head>
+<body>
+    <!-- loader  -->
+    <div class="wrapper">
+        <div class="loader">
+            <h1 class="loader-text">DJ Twins Official.</h1>
+        </div>
+    </div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="container">
+        <!-- nav  -->
+        <nav class="menu">
+            <div class="menu-left menu-item">
+                    <span class="menu-link">about</span>
+                    <span class="menu-link">contact</span>
+            </div>
+            <div class="menu-center menu-item">
+                <div class="brand-logo">DJ TWINS</div>
+            </div>
+            <div class="menu-right menu-item">
+                <div class="search-icon"><ion-icon name="search-sharp"></ion-icon>
+                </div>
+            </div>
+        </nav>
+
+        <!-- hero image  -->
+    <div class="container-main">
+        <div class="wrapper-img portfolio-item">
+            <div class="box"></div>
+            <div class="image"></div>
+          </div>
+
+        <!-- header  -->
+        <div class="header">
+            <h1 class="header-2">Official.</h1>
+            <h1 class="header-1">dj Twins</h1>
+            
+        </div>
+
+        <!-- hero-container  -->
+    <div class="data-scroll-container">
+       <div class="hero-container">
+       
+            <img class="rotate-text" src="twins1.png">
+            <div class="img-nav">
+                <div class="prev">
+                    
+                <p data-scroll-class="scroll-class" class="custom-p" data-scroll data-scroll-speed="2" data-scroll-repeat="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. A doloribus minima dolore non fugit, omnis provident ab, praesentium dignissimos libero dolor, .
+                </p>
+            
+            </div>
+             
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+    <section class="first">
+        <div class="sometext">
+         
+        </div>
+    </section>
+</body> 
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+      <script src="hover-effect.umd.js"></script>
+    <script>
+
+
+
+//cursor
+
+var cursor = $(".cursor"),
+follower = $(".cursor-follower");
+
+            var posX = 0,
+                posY = 0,
+                mouseX = 0,
+                mouseY = 0;
+
+            TweenMax.to({}, 0.016, {
+                repeat: -1,
+                onRepeat: function() {
+                    posX += (mouseX - posX) / 9;
+                    posY += (mouseY - posY) / 9;
+
+                    TweenMax.set(follower, {
+                        css: {
+                            left: posX - 20,
+                            top: posY - 20
+                        }
+                    });
+
+                    TweenMax.set(cursor, {
+                        css: {
+                            left: mouseX,
+                            top: mouseY
+                        }
+                    });
+                }
+            });
+
+            $(document).on("mousemove", function(e) {
+                mouseX = e.pageX;
+                mouseY = e.pageY;
+            });
+    //pic mouse enter
+    $(".portfolio-item img").on("mouseenter", function() {
+                cursor.addClass("active");
+                follower.addClass("active");
+            });
+
+            $(".portfolio-item img").on("mouseleave", function() {
+                cursor.removeClass("active");
+                follower.removeClass("active");
+            });
+
+
+
+
+
+
+//1
+    var textWrapper = document.querySelector('.header-1');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+    .add({
+        targets: '.header-1 .letter',
+        translateY: [200,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        delay: (el, i) => 4800 + 50 * i
+    });
+
+    var textWrapper = document.querySelector('.header-2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+    .add({
+        targets: '.header-2 .letter',
+        translateY: [200,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        delay: (el, i) => 4800 + 50 * i
+    });
+
+    TweenMax.to(".wrapper", 2, {
+        top: "-100%",
+        ease: Expo.easeInOut,
+        delay: 3.6
+    });
+
+    var tl = new TimelineMax();
+
+    tl.from(".loader", 1.6, {
+        scaleY: "0%",
+        y: 80,
+        ease: Expo.easeInOut,
+        delay: 1,
+        transformOrigin:"50% 100%"
+    });
+
+    tl.to(".loader", 1.6, {
+        height: "20vh",
+        scaleY: "0%",
+        ease: Expo.easeInOut,
+        transformOrigin:"0% -100%"
+    });
+
+    TweenMax.to(".box", 2.4, {
+    y: "-100%",
+    ease: Expo.easeInOut,
+    delay: 3.8,
+    });
+
+    var tl = new TweenMax.staggerFrom(".menu > div", 2, {
+        opacity: 0,     
+        y: 30,
+        ease: Expo.easeInOut,
+        delay: 4.2
+    }, 0.1);
+
+    var tl = new TweenMax.staggerFrom(".hero-container > div", 2, {
+        opacity: 0,     
+        y: 30,
+        ease: Expo.easeInOut,
+        delay: 4.2
+    }, 0.1);
+
+
+    // arm
+    
+    var hoverDistort = new hoverEffect({
+            parent: document.querySelector('.wrapper-img'),
+            intensity: 1,
+            image1: 'hero-img.png',
+            image2: 'hero-img2.png',
+            displacementImage: '4.png'
+      });
+
+// Wrap every letter in a span 
+
+
+    </script>
+
+</html>
